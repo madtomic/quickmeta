@@ -1,0 +1,26 @@
+#Worlds that QuickMeta should not work in.
+disabledWorlds:
+- world_nether
+- world_the_end
+
+#Blocks that QuickMeta should not work on.
+disabledBlocks:
+- LAVA
+- DOUBLE_PLANT
+
+#Allow or disallow painting modification.
+allowPaintings: true
+
+#Item that will be used as the Biome tool.
+biomeTool: STICK
+
+#Item that will be used as the Meta tool.
+metaTool: STICK
+
+#Item that will be used as the Entity Tool.
+entityTool: STICK
+
+#Tools can be the same material.
+
+supportWorldGuard: true
+supportPlotMe: true

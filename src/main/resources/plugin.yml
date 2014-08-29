@@ -1,0 +1,77 @@
+name: QuickMeta
+main: com.qwertyness.quickmeta.QuickMeta
+version: 1.1.2
+author: Qwertyness
+description: A simple plugin for switching MetaDatas and biomes.
+softdepend: [WorldGuard, PlotMe, EssentialsProtect]
+
+commands:
+  biometool:
+    description: Give the player the biome tool.
+    permission: quickmeta.biome.tool
+    aliases: bt
+  metatool:
+    description: Gives the player the meta tool.
+    permission: quickmeta.meta.tool
+    aliases: mt
+  entitytool:
+    description: Gives the player the entity tool.
+    permission: quickmeta.entity.tool
+    aliases: [et, lt, let]
+  quickmeta:
+    description: Info command.
+
+permissions:
+  quickmeta.*:
+    description: Gives all QuickMeta permissions.
+    children:
+      quickmeta.biome.*: true
+      quickmeta.meta.*: true
+      quickmeta.entity.*: true
+      quickmeta.bypass.*: true
+      quickmeta.reload: true
+  quickmeta.biome.*:
+    description: Gives all QuickMeta biome permissions.
+    children:
+      quickmeta.biome.tool: true
+      quickmeta.biome.use: true
+  quickmeta.meta.*:
+    description: Gives all QuickMeta meta permissions.
+    children:
+      quickmeta.meta.tool: true
+      quickmeta.meta.use.*: true
+  quickmeta.entity.*:
+    description: Gives all QuickMeta entity permissions.
+    children:
+      quickmeta.entity.tool: true
+      quickmeta.entity.use: true
+  quickmeta.bypass.*:
+    description: Gives player all blacklist bypass permissions.
+    children:
+      quickmeta.bypass.block: true
+      quickmeta.bypass.world: true
+  quickmeta.biome.tool:
+    description: Gives the player permission to use /biometool.
+  quickmeta.biome.use:
+    description: Allows player to use the biome tool.
+  quickmeta.meta.tool:
+    description: Gives the player permission to use /metatool.
+  quickmeta.meta.use.*:
+    description: Allows player to use all functions associated with quickmeta.meta.use.* children.
+    children:
+      quickmeta.meta.use.cycle: true
+      quickmeta.meta.use.copy: true
+  quickmeta.meta.use.cycle:
+    description: Allows player to use the cycle function of the meta tool.
+  quickmeta.meta.use.copy:
+    description: Allows player to use the copy function of the meta tool.
+  quickmeta.entity.tool:
+    description: Gives the player permission to use /entitytool.
+  quickmeta.entity.use:
+    description: Allows player to use the entity tool.
+  quickmeta.bypass.block:
+    description: Allows player to bypass the block blacklist.
+  quickmeta.bypass.world:
+    description: Allows player to bypass the world blacklist.
+  quickmeta.reload:
+    description: Allows player to reload the plugin.
